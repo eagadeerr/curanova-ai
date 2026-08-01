@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symptom Checker — CuraNova AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+<header class="sticky top-0 z-50 glass">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full grad-brand flex items-center justify-center text-white text-sm font-bold">+</span>
+      <span class="display font-semibold text-lg">CuraNova <span class="text-grad">AI</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="ai-chat.html" class="nav-link">AI Chat</a>
+      <a href="symptom-checker.html" class="nav-link">Symptom Checker</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-9 h-9 rounded-full glass flex items-center justify-center">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+</header>
+
+<main class="max-w-2xl mx-auto px-5 py-10">
+  <h1 class="display text-2xl sm:text-3xl font-semibold mb-1">Symptom Checker</h1>
+  <p class="text-dim text-sm mb-6">Answer a few questions to explore general, educational possibilities. This is not a diagnosis.</p>
+
+  <form id="symptom-form" class="card p-6 space-y-5">
+    <div>
+      <label class="block text-sm font-medium mb-1" for="symptoms">What symptoms are you experiencing?</label>
+      <textarea id="symptoms" required rows="3" placeholder="e.g. headache, mild fever, sore throat"
+        class="w-full rounded-xl px-4 py-3 text-sm bg-transparent border" style="border-color:var(--glass-border)"></textarea>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm font-medium mb-1" for="age">Age</label>
+        <input id="age" type="number" min="0" max="120" placeholder="e.g. 28"
+          class="w-full rounded-xl px-4 py-3 text-sm bg-transparent border" style="border-color:var(--glass-border)">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1" for="sex">Biological sex</label>
+        <select id="sex" class="w-full rounded-xl px-4 py-3 text-sm bg-transparent border" style="border-color:var(--glass-border)">
+          <option value="">Prefer not to say</option>
+          <option>Female</option>
+          <option>Male</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm font-medium mb-1" for="duration">Duration</label>
+        <select id="duration" class="w-full rounded-xl px-4 py-3 text-sm bg-transparent border" style="border-color:var(--glass-border)">
+          <option>Less than a day</option>
+          <option>1–3 days</option>
+          <option>4–7 days</option>
+          <option>More than a week</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1" for="severity">Severity</label>
+        <select id="severity" class="w-full rounded-xl px-4 py-3 text-sm bg-transparent border" style="border-color:var(--glass-border)">
+          <option>Mild</option>
+          <option>Moderate</option>
+          <option>Severe</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium mb-1" for="conditions">Existing conditions or medicines (optional)</label>
+      <input id="conditions" type="text" placeholder="e.g. asthma, blood pressure medicine"
+        class="w-full rounded-xl px-4 py-3 text-sm bg-transparent border" style="border-color:var(--glass-border)">
+    </div>
+
+    <button type="submit" class="btn-primary w-full">Check Symptoms</button>
+  </form>
+
+  <div id="result" class="mt-6 hidden"></div>
+</main>
+
+<script src="app.js"></script>
+<script>
+  document.getElementById('symptom-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var symptoms = document.getElementById('symptoms').value;
+    var severity = document.getElementById('severity').value;
+    var resultBox = document.getElementById('result');
+    resultBox.classList.remove('hidden');
+
+    if(containsEmergencyTerm(symptoms) || severity === 'Severe'){
+      resultBox.innerHTML =
+        '<div class="emergency-banner p-6">' +
+        '<p class="font-semibold mb-2">⚠️ This may need urgent attention</p>' +
+        '<p class="text-sm">Based on what you shared, please contact your local emergency number or go to the nearest hospital right away. This tool cannot assess emergencies.</p>' +
+        '</div>';
+      return;
+    }
+
+    resultBox.innerHTML =
+      '<div class="card p-6">' +
+      '<p class="font-semibold mb-2">General possibilities to be aware of</p>' +
+      '<p class="text-sm text-dim mb-4">Based on general health information, symptoms like these are sometimes associated with common, mild conditions such as seasonal viruses, fatigue, or stress. This is educational information only, not a diagnosis.</p>' +
+      '<p class="text-sm font-medium mb-2">Suggested next steps:</p>' +
+      '<ul class="text-sm text-dim list-disc list-inside space-y-1 mb-4">' +
+        '<li>Monitor your symptoms over the next 24–48 hours</li>' +
+        '<li>Stay hydrated and rest</li>' +
+        '<li>See a doctor if symptoms worsen or persist</li>' +
+      '</ul>' +
+      '<a href="ai-chat.html" class="btn-ghost inline-block text-sm">Ask a follow-up question →</a>' +
+      '</div>';
+  });
+</script>
+</body>
+</html>

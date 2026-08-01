@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — CuraNova AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+<header class="sticky top-0 z-50 glass">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full grad-brand flex items-center justify-center text-white text-sm font-bold">+</span>
+      <span class="display font-semibold text-lg">CuraNova <span class="text-grad">AI</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="ai-chat.html" class="nav-link">AI Chat</a>
+      <a href="symptom-checker.html" class="nav-link">Symptom Checker</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-9 h-9 rounded-full glass flex items-center justify-center"><span id="theme-icon">🌙</span></button>
+  </nav>
+</header>
+<main class="max-w-3xl mx-auto px-5 py-10">
+  <h1 class="display text-2xl sm:text-3xl font-semibold mb-1">Pricing</h1>
+  <p class="text-dim text-sm mb-8">Simple plans — start free, upgrade as you need more.</p>
+  
+  <div class="grid sm:grid-cols-3 gap-5">
+    <div class="card p-6"><p class="font-semibold mb-1">Free</p><p class="display text-2xl font-semibold mb-3">$0</p><ul class="text-sm text-dim space-y-1 mb-4"><li>Limited AI chats/month</li><li>Symptom Checker</li><li>Health Library access</li></ul><a href="register.html" class="btn-ghost w-full text-center block text-sm">Get Started</a></div>
+    <div class="card p-6 grad-brand text-white"><p class="font-semibold mb-1">Plus</p><p class="display text-2xl font-semibold mb-3">$6.99<span class="text-sm font-normal">/mo</span></p><ul class="text-sm space-y-1 mb-4 text-white/90"><li>Unlimited AI chats</li><li>Report explain uploads</li><li>Saved chat history</li></ul><a href="register.html" class="btn-ghost w-full text-center block text-sm" style="background:#fff;color:#0B1120;">Choose Plus</a></div>
+    <div class="card p-6"><p class="font-semibold mb-1">Family</p><p class="display text-2xl font-semibold mb-3">$14.99<span class="text-sm font-normal text-dim">/mo</span></p><ul class="text-sm text-dim space-y-1 mb-4"><li>Everything in Plus</li><li>Up to 5 family profiles</li><li>Priority support</li></ul><a href="register.html" class="btn-ghost w-full text-center block text-sm">Choose Family</a></div>
+  </div>
+
+</main>
+<footer class="border-t mt-10" style="border-color:var(--glass-border)">
+  <p class="text-center text-xs text-dim py-8">© 2026 CuraNova AI. Educational information only — not a substitute for professional medical advice.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

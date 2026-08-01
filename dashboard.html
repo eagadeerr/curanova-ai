@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — CuraNova AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+<header class="sticky top-0 z-50 glass">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full grad-brand flex items-center justify-center text-white text-sm font-bold">+</span>
+      <span class="display font-semibold text-lg">CuraNova <span class="text-grad">AI</span></span>
+    </a>
+    <button onclick="toggleTheme()" class="w-9 h-9 rounded-full glass flex items-center justify-center"><span id="theme-icon">🌙</span></button>
+  </nav>
+</header>
+
+<main class="max-w-6xl mx-auto px-5 py-10">
+  <h1 class="display text-2xl sm:text-3xl font-semibold mb-1">Your Dashboard</h1>
+  <p class="text-dim text-sm mb-8">Sample UI — connect to your backend to load real user data.</p>
+
+  <div class="grid md:grid-cols-4 gap-5">
+    <!-- Sidebar -->
+    <nav class="card p-4 h-fit space-y-1 text-sm">
+      <a href="#" class="block px-3 py-2 rounded-lg font-medium" style="background:var(--glass-bg)">Profile</a>
+      <a href="#" class="block px-3 py-2 rounded-lg nav-link">Chat History</a>
+      <a href="#" class="block px-3 py-2 rounded-lg nav-link">Saved Articles</a>
+      <a href="#" class="block px-3 py-2 rounded-lg nav-link">Health Notes</a>
+      <a href="#" class="block px-3 py-2 rounded-lg nav-link">Settings</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="md:col-span-3 space-y-5">
+      <div class="card p-6">
+        <h2 class="font-semibold mb-4">Profile</h2>
+        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+          <div><p class="text-dim">Name</p><p class="font-medium">Sample User</p></div>
+          <div><p class="text-dim">Email</p><p class="font-medium">user@example.com</p></div>
+          <div><p class="text-dim">Member since</p><p class="font-medium">Jan 2026</p></div>
+          <div><p class="text-dim">Plan</p><p class="font-medium">Free</p></div>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <h2 class="font-semibold mb-4">Recent Chat History</h2>
+        <ul class="text-sm divide-y" style="border-color:var(--glass-border)">
+          <li class="py-3 flex justify-between"><span>"What causes a mild fever?"</span><span class="text-dim">2 days ago</span></li>
+          <li class="py-3 flex justify-between"><span>"Explained my blood test report"</span><span class="text-dim">5 days ago</span></li>
+          <li class="py-3 flex justify-between"><span>"Diet tips for more energy"</span><span class="text-dim">1 week ago</span></li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h2 class="font-semibold mb-4">Notifications</h2>
+        <p class="text-sm text-dim">No new notifications.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

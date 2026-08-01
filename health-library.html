@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Library — CuraNova AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+<header class="sticky top-0 z-50 glass">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full grad-brand flex items-center justify-center text-white text-sm font-bold">+</span>
+      <span class="display font-semibold text-lg">CuraNova <span class="text-grad">AI</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="ai-chat.html" class="nav-link">AI Chat</a>
+      <a href="symptom-checker.html" class="nav-link">Symptom Checker</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-9 h-9 rounded-full glass flex items-center justify-center"><span id="theme-icon">🌙</span></button>
+  </nav>
+</header>
+
+<main class="max-w-6xl mx-auto px-5 py-10">
+  <h1 class="display text-2xl sm:text-3xl font-semibold mb-1">Health Library</h1>
+  <p class="text-dim text-sm mb-8">Browse general, easy-to-understand information by category.</p>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="card p-6"><h3 class="font-semibold mb-1">🦠 Diseases & Conditions</h3><p class="text-sm text-dim">Overviews of common conditions in plain language.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">🌡️ Symptoms</h3><p class="text-sm text-dim">What common symptoms may indicate, in general terms.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">💊 Medicines</h3><p class="text-sm text-dim">General uses, common side effects, and precautions.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">🍊 Vitamins & Nutrition</h3><p class="text-sm text-dim">The basics of vitamins, minerals, and balanced eating.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">🧠 Mental Health</h3><p class="text-sm text-dim">Understanding stress, mood, and everyday emotional wellbeing.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">🤰 Pregnancy</h3><p class="text-sm text-dim">General information for each stage of pregnancy.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">🧒 Child Health</h3><p class="text-sm text-dim">Common childhood health topics explained simply.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">🌸 Women's Health</h3><p class="text-sm text-dim">Topics specific to women's health and wellness.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">🧔 Men's Health</h3><p class="text-sm text-dim">Topics specific to men's health and wellness.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">🚑 First Aid</h3><p class="text-sm text-dim">General step-by-step guidance for common situations.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">🏃 Healthy Lifestyle</h3><p class="text-sm text-dim">Everyday habits that support long-term health.</p></div>
+    <a href="ai-chat.html" class="card p-6 grad-brand text-white flex flex-col justify-center items-start"><h3 class="font-semibold mb-1">Can't find a topic?</h3><p class="text-sm text-white/90">Ask CuraNova AI directly →</p></a>
+  </div>
+</main>
+
+<footer class="border-t mt-10" style="border-color:var(--glass-border)">
+  <p class="text-center text-xs text-dim py-8">© 2026 CuraNova AI. Educational information only — not a substitute for professional medical advice.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CuraNova AI — Smarter Health Guidance, Anytime</title>
+<meta name="description" content="CuraNova AI gives you clear, educational health guidance — symptom checking, health library, diet and fitness tips, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-50 glass">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full grad-brand flex items-center justify-center text-white text-sm font-bold">+</span>
+      <span class="display font-semibold text-lg">CuraNova <span class="text-grad">AI</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="ai-chat.html" class="nav-link">AI Chat</a>
+      <a href="symptom-checker.html" class="nav-link">Symptom Checker</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <button onclick="toggleTheme()" aria-label="Toggle dark/light theme" class="w-9 h-9 rounded-full glass flex items-center justify-center">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <a href="login.html" class="hidden sm:inline nav-link text-sm">Log in</a>
+      <a href="register.html" class="btn-primary text-sm">Get Started</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="max-w-6xl mx-auto px-5 pt-14 pb-10 text-center">
+  <p class="inline-block text-xs tracking-widest uppercase text-dim mb-4">Educational health guidance · Not a diagnosis</p>
+  <h1 class="display text-4xl sm:text-6xl font-semibold leading-tight max-w-3xl mx-auto">
+    Smarter health guidance, <span class="text-grad">anytime.</span>
+  </h1>
+  <p class="text-dim mt-5 max-w-xl mx-auto text-base sm:text-lg">
+    Ask CuraNova AI about symptoms, medicines, diet, and wellness — and get clear,
+    easy-to-understand information in seconds.
+  </p>
+
+  <!-- Vital line signature -->
+  <div class="vital-wrap my-8" aria-hidden="true">
+    <svg viewBox="0 0 1400 120" width="100%" height="90" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="vitalGradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#2C5CF0"/>
+          <stop offset="100%" stop-color="#12B886"/>
+        </linearGradient>
+      </defs>
+      <path class="vital-path" d="M0,60 L250,60 L280,20 L310,100 L340,60 L400,60 L430,40 L460,60 L700,60 L730,10 L760,110 L790,60 L1000,60 L1030,35 L1060,60 L1400,60"/>
+    </svg>
+  </div>
+
+  <!-- Search / quick-ask bar -->
+  <form action="ai-chat.html" class="max-w-2xl mx-auto glass rounded-full p-2 flex items-center gap-2 shadow-lg">
+    <input type="text" placeholder="Ask about a symptom, medicine, or health topic…"
+      class="flex-1 bg-transparent outline-none px-4 py-3 text-sm sm:text-base" aria-label="Ask CuraNova AI">
+    <button type="submit" class="btn-primary text-sm whitespace-nowrap">Start Health Chat</button>
+  </form>
+  <p class="text-xs text-dim mt-4">CuraNova AI does not replace licensed medical professionals. <a href="disclaimer.html" class="underline">Read our medical disclaimer</a>.</p>
+</section>
+
+<div class="vital-wrap divider-vital" aria-hidden="true">
+  <svg viewBox="0 0 1400 40" width="100%" height="30" preserveAspectRatio="none">
+    <path fill="none" stroke="var(--glass-border)" stroke-width="1.5" d="M0,20 L1400,20"/>
+  </svg>
+</div>
+
+<!-- ============ FEATURES ============ -->
+<section class="max-w-6xl mx-auto px-5 py-16">
+  <h2 class="display text-2xl sm:text-3xl font-semibold text-center mb-2">Everything you need to understand your health</h2>
+  <p class="text-dim text-center max-w-lg mx-auto mb-10">Clear, structured tools built around real questions people ask every day.</p>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <a href="ai-chat.html" class="card p-6 block">
+      <div class="w-11 h-11 rounded-xl grad-brand flex items-center justify-center text-white text-lg mb-4">💬</div>
+      <h3 class="font-semibold mb-1">AI Health Chat</h3>
+      <p class="text-sm text-dim">Ask anything about your health and get plain-language answers, instantly.</p>
+    </a>
+    <a href="symptom-checker.html" class="card p-6 block">
+      <div class="w-11 h-11 rounded-xl grad-brand flex items-center justify-center text-white text-lg mb-4">🩺</div>
+      <h3 class="font-semibold mb-1">Symptom Checker</h3>
+      <p class="text-sm text-dim">Describe your symptoms and explore possible, general explanations.</p>
+    </a>
+    <a href="health-library.html" class="card p-6 block">
+      <div class="w-11 h-11 rounded-xl grad-brand flex items-center justify-center text-white text-lg mb-4">📚</div>
+      <h3 class="font-semibold mb-1">Health Library</h3>
+      <p class="text-sm text-dim">Browse trusted, easy-to-read articles on conditions, medicines, and more.</p>
+    </a>
+    <a href="diet-fitness.html" class="card p-6 block">
+      <div class="w-11 h-11 rounded-xl grad-brand flex items-center justify-center text-white text-lg mb-4">🥗</div>
+      <h3 class="font-semibold mb-1">Diet & Fitness</h3>
+      <p class="text-sm text-dim">General nutrition and activity guidance based on your goals.</p>
+    </a>
+    <a href="mental-wellness.html" class="card p-6 block">
+      <div class="w-11 h-11 rounded-xl grad-brand flex items-center justify-center text-white text-lg mb-4">🧘</div>
+      <h3 class="font-semibold mb-1">Mental Wellness</h3>
+      <p class="text-sm text-dim">Gentle guidance on stress, sleep, and everyday emotional wellbeing.</p>
+    </a>
+    <a href="first-aid.html" class="card p-6 block">
+      <div class="w-11 h-11 rounded-xl grad-brand flex items-center justify-center text-white text-lg mb-4">🚑</div>
+      <h3 class="font-semibold mb-1">First Aid Guide</h3>
+      <p class="text-sm text-dim">Step-by-step general first aid information for common situations.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ============ TRUSTED INFO STRIP ============ -->
+<section class="max-w-6xl mx-auto px-5 py-10">
+  <div class="card p-8 grid sm:grid-cols-3 gap-6 text-center">
+    <div>
+      <p class="display text-3xl font-semibold text-grad">100%</p>
+      <p class="text-sm text-dim mt-1">Educational — never a substitute for a doctor</p>
+    </div>
+    <div>
+      <p class="display text-3xl font-semibold text-grad">24/7</p>
+      <p class="text-sm text-dim mt-1">Available whenever you have a question</p>
+    </div>
+    <div>
+      <p class="display text-3xl font-semibold text-grad">0</p>
+      <p class="text-sm text-dim mt-1">Prescriptions or diagnoses issued by CuraNova AI</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="max-w-6xl mx-auto px-5 py-16">
+  <h2 class="display text-2xl sm:text-3xl font-semibold text-center mb-10">What people say</h2>
+  <div class="grid sm:grid-cols-3 gap-5">
+    <div class="card p-6">
+      <p class="text-sm mb-4">"It helped me understand my lab report before my follow-up appointment. Made the doctor visit so much less stressful."</p>
+      <p class="text-sm font-semibold">— Aisha R.</p>
+    </div>
+    <div class="card p-6">
+      <p class="text-sm mb-4">"I like that it's honest about its limits and tells me clearly when to see a real doctor."</p>
+      <p class="text-sm font-semibold">— Daniel K.</p>
+    </div>
+    <div class="card p-6">
+      <p class="text-sm mb-4">"The diet suggestions were simple and easy to actually follow, not overwhelming."</p>
+      <p class="text-sm font-semibold">— Meera S.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="max-w-4xl mx-auto px-5 py-16 text-center">
+  <div class="card p-10 grad-brand">
+    <h2 class="display text-2xl sm:text-3xl font-semibold text-white mb-3">Have a health question right now?</h2>
+    <p class="text-white/90 mb-6">Start a free chat and get clear, general guidance in seconds.</p>
+    <a href="ai-chat.html" class="btn-ghost bg-white text-[--ink] inline-block" style="color:#0B1120;background:#fff;">Start Health Chat</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t" style="border-color:var(--glass-border)">
+  <div class="max-w-6xl mx-auto px-5 py-10 grid sm:grid-cols-4 gap-8 text-sm">
+    <div>
+      <p class="display font-semibold mb-2">CuraNova AI</p>
+      <p class="text-dim">Smarter health guidance, anytime.</p>
+    </div>
+    <div>
+      <p class="font-semibold mb-2">Product</p>
+      <ul class="space-y-1 text-dim">
+        <li><a href="ai-chat.html" class="nav-link">AI Chat</a></li>
+        <li><a href="symptom-checker.html" class="nav-link">Symptom Checker</a></li>
+        <li><a href="health-library.html" class="nav-link">Health Library</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold mb-2">Company</p>
+      <ul class="space-y-1 text-dim">
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold mb-2">Legal</p>
+      <ul class="space-y-1 text-dim">
+        <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+        <li><a href="terms.html" class="nav-link">Terms of Service</a></li>
+        <li><a href="disclaimer.html" class="nav-link">Medical Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="text-center text-xs text-dim pb-8">© 2026 CuraNova AI. Educational information only — not a substitute for professional medical advice.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

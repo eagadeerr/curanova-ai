@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Health Chat — CuraNova AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+<header class="sticky top-0 z-50 glass">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full grad-brand flex items-center justify-center text-white text-sm font-bold">+</span>
+      <span class="display font-semibold text-lg">CuraNova <span class="text-grad">AI</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="ai-chat.html" class="nav-link">AI Chat</a>
+      <a href="symptom-checker.html" class="nav-link">Symptom Checker</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-9 h-9 rounded-full glass flex items-center justify-center">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+</header>
+
+<main class="max-w-2xl mx-auto w-full px-5 py-8 flex-1 flex flex-col">
+  <h1 class="display text-2xl font-semibold mb-1">AI Health Chat</h1>
+  <p class="text-dim text-sm mb-4">Ask about a symptom, a condition, or general wellness. Educational information only.</p>
+
+  <div class="glass rounded-2xl p-3 text-xs text-dim mb-4">
+    ⚕️ CuraNova AI provides general educational information and does not diagnose conditions or replace a licensed
+    healthcare professional. If you may be having a medical emergency, contact your local emergency number immediately.
+  </div>
+
+  <div id="chat-window" class="flex-1 space-y-4 overflow-y-auto mb-4 min-h-[300px]">
+    <div class="flex gap-3">
+      <div class="w-8 h-8 rounded-full grad-brand flex items-center justify-center text-white text-sm shrink-0">AI</div>
+      <div class="card p-4 text-sm max-w-[85%]">
+        Hi, I'm CuraNova AI. What health question can I help you understand today?
+      </div>
+    </div>
+  </div>
+
+  <form id="chat-form" class="glass rounded-full p-2 flex items-center gap-2">
+    <input id="chat-input" type="text" required placeholder="Type your question…"
+      class="flex-1 bg-transparent outline-none px-4 py-3 text-sm" aria-label="Type your health question">
+    <button type="submit" class="btn-primary text-sm">Send</button>
+  </form>
+</main>
+
+<script src="app.js"></script>
+<script>
+  var form = document.getElementById('chat-form');
+  var input = document.getElementById('chat-input');
+  var win = document.getElementById('chat-window');
+
+  function addMessage(text, fromUser, emergency){
+    var row = document.createElement('div');
+    row.className = 'flex gap-3' + (fromUser ? ' flex-row-reverse' : '');
+    var bubbleClasses = 'p-4 text-sm max-w-[85%] ' + (emergency ? 'emergency-banner' : (fromUser ? 'grad-brand text-white rounded-2xl' : 'card'));
+    row.innerHTML =
+      '<div class="w-8 h-8 rounded-full ' + (fromUser ? 'glass' : 'grad-brand text-white') + ' flex items-center justify-center text-sm shrink-0">' + (fromUser ? '🙂' : 'AI') + '</div>' +
+      '<div class="' + bubbleClasses + ' rounded-2xl">' + text + '</div>';
+    win.appendChild(row);
+    win.scrollTop = win.scrollHeight;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var text = input.value.trim();
+    if(!text) return;
+    addMessage(text, true, false);
+    input.value = '';
+
+    setTimeout(function(){
+      var reply = mockAIReply(text);
+      addMessage(reply.text, false, reply.emergency);
+    }, 500);
+  });
+</script>
+</body>
+</html>

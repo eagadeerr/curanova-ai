@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Aid Guide — CuraNova AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+<header class="sticky top-0 z-50 glass">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full grad-brand flex items-center justify-center text-white text-sm font-bold">+</span>
+      <span class="display font-semibold text-lg">CuraNova <span class="text-grad">AI</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="ai-chat.html" class="nav-link">AI Chat</a>
+      <a href="symptom-checker.html" class="nav-link">Symptom Checker</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-9 h-9 rounded-full glass flex items-center justify-center"><span id="theme-icon">🌙</span></button>
+  </nav>
+</header>
+
+<main class="max-w-3xl mx-auto px-5 py-10">
+  <h1 class="display text-2xl sm:text-3xl font-semibold mb-1">First Aid Guide</h1>
+  <p class="text-dim text-sm mb-8">General, step-by-step information for common situations. In an emergency, always call your local emergency number first.</p>
+  
+  <div class="grid sm:grid-cols-2 gap-5">
+    <div class="card p-6"><h3 class="font-semibold mb-1">Minor Cuts & Scrapes</h3><p class="text-sm text-dim">Clean gently, apply pressure to stop bleeding, and cover with a clean bandage.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">Minor Burns</h3><p class="text-sm text-dim">Cool the area under running water and cover loosely — seek care for large or severe burns.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">Sprains</h3><p class="text-sm text-dim">Rest, ice, gentle compression, and elevation can help with mild sprains.</p></div>
+    <div class="card p-6"><h3 class="font-semibold mb-1">Fainting</h3><p class="text-sm text-dim">Lay the person down and raise their legs; seek help if they do not recover quickly.</p></div>
+  </div>
+  <div class="emergency-banner p-6 mt-6"><p class="font-semibold mb-1">Serious emergencies</p><p class="text-sm">For chest pain, severe bleeding, difficulty breathing, or loss of consciousness — call emergency services immediately. Do not rely on this page.</p></div>
+
+</main>
+
+<footer class="border-t mt-10" style="border-color:var(--glass-border)">
+  <p class="text-center text-xs text-dim py-8">© 2026 CuraNova AI. Educational information only — not a substitute for professional medical advice.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

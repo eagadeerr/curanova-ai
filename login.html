@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In — CuraNova AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex items-center justify-center px-5">
+<div class="w-full max-w-sm">
+  <a href="index.html" class="flex items-center gap-2 justify-center mb-8">
+    <span class="w-8 h-8 rounded-full grad-brand flex items-center justify-center text-white text-sm font-bold">+</span>
+    <span class="display font-semibold text-lg">CuraNova <span class="text-grad">AI</span></span>
+  </a>
+
+  <div class="card p-7">
+    <h1 class="display text-xl font-semibold mb-1">Welcome back</h1>
+    <p class="text-dim text-sm mb-6">Log in to access your health chat history and saved notes.</p>
+
+    <form onsubmit="event.preventDefault(); alert('Demo only — connect this form to your backend /api/auth/login endpoint.');" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1" for="email">Email</label>
+        <input id="email" type="email" required class="w-full rounded-xl px-4 py-3 text-sm bg-transparent border" style="border-color:var(--glass-border)">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1" for="password">Password</label>
+        <input id="password" type="password" required class="w-full rounded-xl px-4 py-3 text-sm bg-transparent border" style="border-color:var(--glass-border)">
+      </div>
+      <button type="submit" class="btn-primary w-full">Log In</button>
+    </form>
+
+    <p class="text-sm text-dim text-center mt-5">Don't have an account? <a href="register.html" class="underline">Sign up</a></p>
+  </div>
+  <button onclick="toggleTheme()" class="w-9 h-9 rounded-full glass flex items-center justify-center mx-auto mt-6"><span id="theme-icon">🌙</span></button>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
